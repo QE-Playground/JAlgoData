@@ -6,5 +6,10 @@ public class main {
 
         SearchAlgorithms.print(elementToSearch, SearchAlgorithms.linearSearch(array1, elementToSearch));
         SearchAlgorithms.print(elementToSearch, SearchAlgorithms.binarySearch(array2, elementToSearch));
+
+        int[] array3 = array1;
+
+        SortingAlgorithms.selectionSort(array3);
+        SortingAlgorithms.print(array3);
     }
 }
