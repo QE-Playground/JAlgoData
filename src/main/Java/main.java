@@ -11,5 +11,10 @@ public class main {
 
         SortingAlgorithms.selectionSort(array3);
         SortingAlgorithms.print(array3);
+
+        int[] array4 = array1;
+
+        SortingAlgorithms.insertionSort(array4);
+        SortingAlgorithms.print(array4);
     }
 }
