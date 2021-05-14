@@ -12,7 +12,6 @@ public class TestSortingAlgorithms {
 
         SortingAlgorithms.selectionSort(array);
         Assert.assertArrayEquals(expectedArray, array);
-        SortingAlgorithms.print(array);
     }
 
     @Test
@@ -21,6 +20,5 @@ public class TestSortingAlgorithms {
 
         SortingAlgorithms.insertionSort(array);
         Assert.assertArrayEquals(expectedArray, array);
-        SortingAlgorithms.print(array);
     }
 }
