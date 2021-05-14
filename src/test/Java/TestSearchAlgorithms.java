@@ -1,16 +1,10 @@
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TestSearchAlgorithms {
 
     private static int[] array;
-    private static int elementToSearch;
-
-    @BeforeClass
-    public static void setUp() {
-        elementToSearch = 8;
-    }
+    private static final int elementToSearch = 8;
 
     @Test
     public void linearSearchTest() {
