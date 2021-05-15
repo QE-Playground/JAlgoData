@@ -1,6 +1,18 @@
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    public static void bubbleSort(int[] a) {
+        int N = a.length;
+
+        for (int i = 0; i < N; i++) {
+            for (int j = N-1; j > i; j--) {
+                if (a[j] < a[j-1]) {
+                    swap(j , j-1, a);
+                }
+            }
+        }
+    }
+
     public static void interchangeSort(int[] a) {
         int N = a.length;
 

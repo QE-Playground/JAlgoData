@@ -43,4 +43,12 @@ public class TestSortingAlgorithms {
         SortingAlgorithms.interchangeSort(array);
         Assert.assertArrayEquals(expectedArray, array);
     }
+
+    @Test
+    public void bubbleSortTest() {
+        int[] array = arrayToTest;
+
+        SortingAlgorithms.bubbleSort(array);
+        Assert.assertArrayEquals(expectedArray, array);
+    }
 }
