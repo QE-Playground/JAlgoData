@@ -2,14 +2,14 @@ import java.util.Arrays;
 
 public class SortingAlgorithms {
     public static void heapSort(int[] a) {
-        int N = a.length, r = N;
+        int N = a.length, r = N-1;
 
         createHeap(a);
 
         while (r > 0) {
             swap(0, r, a);
             r--;
-            heapify(a, 0, r);
+            siftUp(a, 0, r);
         }
     }
 
@@ -136,19 +136,19 @@ public class SortingAlgorithms {
         int N = a.length, l = N/2;
 
         while (l > 0) {
-            heapify(a, l, N);
+            siftUp(a, l, N-1);
             l--;
         }
     }
 
-    private static void heapify(int[] a, int l, int r) {
+    private static void siftUp(int[] a, int l, int r) {
         int i = l, j = 2 * i;
         int x = a[i];
 
-        while (j <= r) {
+        loop: while (j <= r) {
             if (j < r) {
                 if (a[j] < a[j+1]) j++;
-                if (a[j] < x) break;
+                if (a[j] <= x) break loop;
             } else {
                 a[i] = a[j];
                 i = j;
