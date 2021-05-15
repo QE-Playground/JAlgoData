@@ -1,6 +1,36 @@
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    public static void shakerSort(int[] a) {
+        int N = a.length;
+        int l = 0, r = N-1, k = N-1;
+
+        while (l < r) {
+            int j = r;
+
+            while (j > l) {
+                if (a[j] < a[j-1]) {
+                    swap(j , j-1, a);
+                    k = j;
+                }
+                j--;
+            }
+
+            l = k;
+            j = l;
+
+            while (j < r) {
+                if (a[j] > a[j+1]) {
+                    swap(j , j+1, a);
+                    k = j;
+                }
+                j++;
+            }
+
+            r = k;
+        }
+    }
+
     public static void bubbleSort(int[] a) {
         int N = a.length;
 

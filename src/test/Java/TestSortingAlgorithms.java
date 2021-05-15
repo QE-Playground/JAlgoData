@@ -51,4 +51,12 @@ public class TestSortingAlgorithms {
         SortingAlgorithms.bubbleSort(array);
         Assert.assertArrayEquals(expectedArray, array);
     }
+
+    @Test
+    public void shakerSortTest() {
+        int[] array = arrayToTest;
+
+        SortingAlgorithms.shakerSort(array);
+        Assert.assertArrayEquals(expectedArray, array);
+    }
 }
