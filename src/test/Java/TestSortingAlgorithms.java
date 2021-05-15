@@ -35,4 +35,12 @@ public class TestSortingAlgorithms {
         SortingAlgorithms.binaryInsertionSort(array);
         Assert.assertArrayEquals(expectedArray, array);
     }
+
+    @Test
+    public void interchangeSortTest() {
+        int[] array = arrayToTest;
+
+        SortingAlgorithms.interchangeSort(array);
+        Assert.assertArrayEquals(expectedArray, array);
+    }
 }

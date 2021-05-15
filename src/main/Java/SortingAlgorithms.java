@@ -1,6 +1,17 @@
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    public static void interchangeSort(int[] a) {
+        int N = a.length;
+
+        for (int i = 0; i < N-1; i++) {
+            for (int j = i+1; j < N; j++) {
+                if (a[j] < a[i]) {
+                    swap(i , j, a);
+                }
+            }
+        }
+    }
 
     public static void binaryInsertionSort(int[] a) {
         int l, r, m, temp;
