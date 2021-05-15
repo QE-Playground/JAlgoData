@@ -76,4 +76,12 @@ public class TestSortingAlgorithms {
         SortingAlgorithms.shellSort(array, steps);
         Assert.assertArrayEquals(expectedArray, array);
     }
+
+    @Test
+    public void quickSortTest() {
+        int[] array = arrayToTest;
+
+        SortingAlgorithms.quickSort(array, 0, array.length - 1);
+        Assert.assertArrayEquals(expectedArray, array);
+    }
 }

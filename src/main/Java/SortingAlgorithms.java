@@ -1,6 +1,25 @@
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    public static void quickSort(int[] a, int l, int r) {
+        int i = l, j = r;
+        int x = a[(l+r)/2];
+
+        do {
+            while (a[i] < x) i++;
+            while (a[j] > x) j--;
+
+            if (i <= j) {
+                swap(i, j, a);
+                i++;
+                j--;
+            }
+        } while (i < j);
+
+        if (l < j) quickSort(a, l, j);
+        if (i < r) quickSort(a, i, r);
+    }
+
     public static void shellSort(int[] a, int[] steps) {
         for (int step : steps) {
             insertionSort(a, step);
