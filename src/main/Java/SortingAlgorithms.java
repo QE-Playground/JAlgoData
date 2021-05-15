@@ -7,7 +7,7 @@ public class SortingAlgorithms {
 
         for (int i = 1; i < a.length; i++) {
             temp = a[i];
-            l = 1;
+            l = 0;
             r = i-1;
 
             while (l <= r) {
@@ -20,7 +20,7 @@ public class SortingAlgorithms {
                 }
             }
 
-            for (int j = i-1; j >= 1; j--) {
+            for (int j = i-1; j >= l; j--) {
                 a[j+1] = a[j];
             }
 
