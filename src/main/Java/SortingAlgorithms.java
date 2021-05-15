@@ -1,6 +1,18 @@
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    public static void heapSort(int[] a) {
+        int N = a.length, r = N;
+
+        createHeap(a);
+
+        while (r > 0) {
+            swap(0, r, a);
+            r--;
+            heapify(a, 0, r);
+        }
+    }
+
     public static void shakerSort(int[] a) {
         int N = a.length;
         int l = 0, r = N-1, k = N-1;
@@ -118,6 +130,32 @@ public class SortingAlgorithms {
 
     public static void print(int[] array) {
         System.out.println(Arrays.toString(array));
+    }
+
+    private static void createHeap(int[] a) {
+        int N = a.length, l = N/2;
+
+        while (l > 0) {
+            heapify(a, l, N);
+            l--;
+        }
+    }
+
+    private static void heapify(int[] a, int l, int r) {
+        int i = l, j = 2 * i;
+        int x = a[i];
+
+        while (j <= r) {
+            if (j < r) {
+                if (a[j] < a[j+1]) j++;
+                if (a[j] < x) break;
+            } else {
+                a[i] = a[j];
+                i = j;
+                j = 2 * i;
+                a[i] = x;
+            }
+        }
     }
 
     private static void swap(int i, int j, int[] arr) {

@@ -59,4 +59,12 @@ public class TestSortingAlgorithms {
         SortingAlgorithms.shakerSort(array);
         Assert.assertArrayEquals(expectedArray, array);
     }
+
+    @Test
+    public void heapSortTest() {
+        int[] array = arrayToTest;
+
+        SortingAlgorithms.heapSort(array);
+        Assert.assertArrayEquals(expectedArray, array);
+    }
 }
