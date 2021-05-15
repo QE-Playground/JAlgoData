@@ -2,6 +2,33 @@ import java.util.Arrays;
 
 public class SortingAlgorithms {
 
+    public static void binaryInsertionSort(int[] a) {
+        int l, r, m, temp;
+
+        for (int i = 1; i < a.length; i++) {
+            temp = a[i];
+            l = 1;
+            r = i-1;
+
+            while (l <= r) {
+                m = (l + r) / 2;
+
+                if (temp < a[m]) {
+                    r = m - 1;
+                } else {
+                    l = m + 1;
+                }
+            }
+
+            for (int j = i-1; j >= 1; j--) {
+                a[j+1] = a[j];
+            }
+
+            a[l] = temp;
+
+        }
+    }
+
     public static void insertionSort(int[] a) {
         int pos, temp;
         int N = a.length;
