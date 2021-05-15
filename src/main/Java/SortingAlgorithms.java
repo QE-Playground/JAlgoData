@@ -6,7 +6,7 @@ public class SortingAlgorithms {
 
         createHeap(a);
 
-        while (r > 0) {
+        while (r >= 0) {
             swap(0, r, a);
             r--;
             siftUp(a, 0, r);
@@ -135,7 +135,7 @@ public class SortingAlgorithms {
     private static void createHeap(int[] a) {
         int N = a.length, l = N/2;
 
-        while (l > 0) {
+        while (l >= 0) {
             siftUp(a, l, N-1);
             l--;
         }
@@ -145,15 +145,17 @@ public class SortingAlgorithms {
         int i = l, j = 2 * i;
         int x = a[i];
 
-        loop: while (j <= r) {
+        while (j <= r) {
             if (j < r) {
                 if (a[j] < a[j+1]) j++;
-                if (a[j] <= x) break loop;
-            } else {
-                a[i] = a[j];
-                i = j;
-                j = 2 * i;
-                a[i] = x;
+                if (a[j] < x) {
+                    break;
+                } else {
+                    a[i] = a[j];
+                    i = j;
+                    j = 2 * i;
+                    a[i] = x;
+                }
             }
         }
     }
