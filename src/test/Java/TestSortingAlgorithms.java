@@ -67,4 +67,13 @@ public class TestSortingAlgorithms {
         SortingAlgorithms.heapSort(array);
         Assert.assertArrayEquals(expectedArray, array);
     }
+
+    @Test
+    public void shellSortTest() {
+        int[] array = arrayToTest;
+        int[] steps = new int[]{5, 3, 1};
+
+        SortingAlgorithms.shellSort(array, steps);
+        Assert.assertArrayEquals(expectedArray, array);
+    }
 }

@@ -1,6 +1,12 @@
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    public static void shellSort(int[] a, int[] steps) {
+        for (int step : steps) {
+            insertionSort(a, step);
+        }
+    }
+
     public static void heapSort(int[] a) {
         int N = a.length, l = N/2, r = N-1;
 
@@ -133,6 +139,23 @@ public class SortingAlgorithms {
 
     public static void print(int[] array) {
         System.out.println(Arrays.toString(array));
+    }
+
+    private static void insertionSort(int[] a, int step) {
+        int pos, temp;
+        int N = a.length;
+
+        for (int i = step; i < N; i++) {
+            temp = a[i];
+            pos = i-step;
+
+            while ((pos >= 0) && (a[pos] > temp)) {
+                a[pos+step] = a[pos];
+                pos = pos - step;
+            }
+
+            a[pos+step] = temp;
+        }
     }
 
     private static void siftUp(int[] a, int l, int r) {
