@@ -135,4 +135,16 @@ public class TestSortingAlgorithms {
         SortingAlgorithms.mergeSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
+
+    @Test
+    public void radixSortTest() {
+        int[] array = arrayToTest;
+
+        SortingAlgorithms.radixSort(array);
+        Assert.assertArrayEquals(expectedArray, array);
+
+        array = anotherArrayToTest;
+        SortingAlgorithms.radixSort(array);
+        Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
+    }
 }
