@@ -180,8 +180,9 @@ public class SortingAlgorithms {
     private static void siftUp(int[] a, int l, int r) {
         int i = l, j = 2 * i;
         int x = a[i];
+        int maxTry = 0;
 
-        while (j <= r) {
+        while (j <= r && maxTry < 10) {
             if (j < r) {
                 if (a[j] < a[j+1]) j++;
                 if (a[j] < x) {
@@ -195,6 +196,7 @@ public class SortingAlgorithms {
             } else {
                 break;
             }
+            maxTry++;
         }
     }
 
