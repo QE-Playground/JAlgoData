@@ -1,6 +1,24 @@
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+    public static void mergeSort(int[] a) {
+        int k = 1, n = a.length;
+
+        do {
+            int p = 0, pb = 0, pc = 0;
+            int[] b = new int[n], c = new int[n];
+
+            while (p < n) {
+                for (int i = 0; (p < n) && (i < k); i++) b[pb++] = a[p++];
+                for (int i = 0; (p < n) && (i < k); i++) c[pc++] = a[p++];
+            }
+
+            merge(a, b, c, pb, pc, k);
+
+            k *= 2;
+        } while (k < n);
+    }
+
     public static void quickSort(int[] a, int l, int r) {
         int i = l, j = r;
         int x = a[(l+r)/2];
@@ -174,6 +192,33 @@ public class SortingAlgorithms {
             }
 
             a[pos+step] = temp;
+        }
+    }
+
+    private static void merge(int[] a, int[] b, int[] c, int nb, int nc, int k) {
+        int p = 0, pb = 0, pc = 0, ib = 0, ic = 0;
+
+        while ((0 < nb) && (0 < nc)) {
+            int kb = Math.min(k, nb);
+            int kc = Math.min(k, nc);
+
+            if (b[pb+ib] <= c[pc+ic]) {
+                a[p++] = b[pb+ib]; ib++;
+                if (ib == kb) {
+                    for(; ic < kc; ic++) a[p++] = c[pc+ic];
+                    pb += kb; pc += kc;
+                    ib = 0; ic = 0;
+                    nb -= kb; nc -= kc;
+                }
+            } else {
+                a[p++] = c[pc+ic]; ic++;
+                if (ic == kc) {
+                    for(; ib < kb; ib++) a[p++] = b[pb+ib];
+                    pb += kb; pc += kc;
+                    ib = 0; ic = 0;
+                    nb -= kb; nc -= kc;
+                }
+            }
         }
     }
 

@@ -123,4 +123,16 @@ public class TestSortingAlgorithms {
         SortingAlgorithms.quickSort(array, 0, array.length - 1);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
+
+    @Test
+    public void mergeSortTest() {
+        int[] array = arrayToTest;
+
+        SortingAlgorithms.mergeSort(array);
+        Assert.assertArrayEquals(expectedArray, array);
+
+        array = anotherArrayToTest;
+        SortingAlgorithms.mergeSort(array);
+        Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
+    }
 }
