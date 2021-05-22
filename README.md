@@ -1,6 +1,6 @@
-# AlgorithmsAndDataStructuresSandbox
+# AlgorithmsSandbox
 
-Classical data structures and algorithms, with my implementation in Java.
+Classical algorithms, such as searching and sorting algorithms, with my implementation in Java. 
 
 Test programs are written as junit test cases.
 
