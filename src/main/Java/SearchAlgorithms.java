@@ -1,15 +1,15 @@
-public class SearchAlgorithms {
+public class SearchAlgorithms<T> {
 
-    public static int linearSearch(int arr[], int elementToSearch) {
+    public int linearSearch(T[] arr, T elementToSearch) {
 
         for (int index = 0; index < arr.length; index++) {
-            if (arr[index] == elementToSearch)
+            if (arr[index].equals(elementToSearch))
                 return index;
         }
         return -1;
     }
 
-    public static int binarySearch(int arr[], int elementToSearch) {
+    public static int binarySearch(Integer[] arr, Integer elementToSearch) {
 
         int firstIndex = 0;
         int lastIndex = arr.length - 1;
@@ -36,7 +36,7 @@ public class SearchAlgorithms {
         return -1;
     }
 
-    public static void print(int elementToSearch, int index) {
+    public void print(T elementToSearch, int index) {
         if (index == -1){
             System.out.println(elementToSearch + " not found.");
         }
