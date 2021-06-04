@@ -13,17 +13,17 @@ Searching algorithms:
 - Generic Binary search.
 
 Sorting algorithms:
-- Selection sort.
-- Insertion sort.
-- Binary insertion sort.
-- Interchange sort.
-- Bubble sort.
-- Shaker sort.
-- Heap sort.
-- Shell sort.
-- Quick sort.
-- Merge sort.
-- Radix sort.
+- Generic Selection sort.
+- Generic Insertion sort.
+- Generic Binary insertion sort.
+- Generic Interchange sort.
+- Generic Bubble sort.
+- Generic Shaker sort.
+- Generic Heap sort.
+- Generic Shell sort.
+- Generic Quick sort.
+- Generic Merge sort (tc failed).
+- Radix sort (still not generic).
 
 References: 
 
