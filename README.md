@@ -1,6 +1,8 @@
-# AlgorithmsSandbox
+# Algorithms Sandbox In Java
 
-Classical algorithms, such as searching and sorting algorithms, with my implementation in Java. 
+A sanbox for classical algorithms, such as searching and sorting algorithms, with my implementation in Java. 
+
+Starting from implemenation for integer arrays, I will try to upgrade all searching and sorting methods to generic methods.
 
 Test programs are written as junit test cases.
 
