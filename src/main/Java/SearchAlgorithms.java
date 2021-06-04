@@ -1,4 +1,4 @@
-public class SearchAlgorithms<T> {
+public class SearchAlgorithms<T extends Comparable<T>> {
 
     public int linearSearch(T[] arr, T elementToSearch) {
 
@@ -9,7 +9,7 @@ public class SearchAlgorithms<T> {
         return -1;
     }
 
-    public static int binarySearch(Integer[] arr, Integer elementToSearch) {
+    public int binarySearch(T[] arr, T elementToSearch) {
 
         int firstIndex = 0;
         int lastIndex = arr.length - 1;
@@ -18,18 +18,18 @@ public class SearchAlgorithms<T> {
         while(firstIndex <= lastIndex) {
             int middleIndex = (firstIndex + lastIndex) / 2;
             // if the middle element is our goal element, return its index
-            if (arr[middleIndex] == elementToSearch) {
+            if (arr[middleIndex].compareTo(elementToSearch) == 0) {
                 return middleIndex;
             }
 
             // if the middle element is smaller
             // point our index to the middle+1, taking the first half out of consideration
-            else if (arr[middleIndex] < elementToSearch)
+            else if (arr[middleIndex].compareTo(elementToSearch) == -1 )
                 firstIndex = middleIndex + 1;
 
                 // if the middle element is bigger
                 // point our index to the middle-1, taking the second half out of consideration
-            else if (arr[middleIndex] > elementToSearch)
+            else if (arr[middleIndex].compareTo(elementToSearch) == 1)
                 lastIndex = middleIndex - 1;
 
         }
