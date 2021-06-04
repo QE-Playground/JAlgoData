@@ -22,7 +22,7 @@ Sorting algorithms:
 - Generic Heap sort.
 - Generic Shell sort.
 - Generic Quick sort.
-- Generic Merge sort (tc failed).
+- Generic Merge sort.
 - Radix sort (still not generic).
 
 References: 
