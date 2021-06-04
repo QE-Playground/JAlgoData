@@ -6,13 +6,16 @@ public class TestSortingAlgorithms {
 
     private Integer[] arrayToTest;
     private Integer[] anotherArrayToTest;
+    private Float[]   floatArray;
     private static final Integer[] expectedArray        = new Integer[]{1, 2, 4, 5, 6, 8, 12, 15};
     private static final Integer[] anotherExpectedArray = new Integer[]{6, 12, 18, 42, 44, 55, 67, 94};
+    private static final Float[]   expectedFloatArray   = new Float[]{1.0f, 2.0f, 4.0f, 5.0f, 6.0f, 8.0f, 12.0f, 15.0f};
 
     @Before
     public void setArrayToTest() {
         arrayToTest        = new Integer[]{12, 2, 8, 5, 1, 6, 4, 15};
         anotherArrayToTest = new Integer[]{44, 55, 12, 42, 94, 18, 6, 67};
+        floatArray         = new Float[]{12.0f, 2.0f, 8.0f, 5.0f, 1.0f, 6.0f, 4.0f, 15.0f};
     }
 
     @Test
@@ -29,6 +32,15 @@ public class TestSortingAlgorithms {
     }
 
     @Test
+    public void selectionSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.selectionSort(array);
+        Assert.assertArrayEquals(expectedFloatArray, array);
+    }
+
+    @Test
     public void insertionSortTest() {
         Integer[] array = arrayToTest;
         SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
@@ -39,6 +51,15 @@ public class TestSortingAlgorithms {
         array = anotherArrayToTest;
         sortingAlgorithm.insertionSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
+    }
+
+    @Test
+    public void insertionSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.insertionSort(array);
+        Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
@@ -55,6 +76,15 @@ public class TestSortingAlgorithms {
     }
 
     @Test
+    public void binaryInsertionSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.binaryInsertionSort(array);
+        Assert.assertArrayEquals(expectedFloatArray, array);
+    }
+
+    @Test
     public void interchangeSortTest() {
         Integer[] array = arrayToTest;
         SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
@@ -65,6 +95,15 @@ public class TestSortingAlgorithms {
         array = anotherArrayToTest;
         sortingAlgorithm.interchangeSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
+    }
+
+    @Test
+    public void interchangeSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.interchangeSort(array);
+        Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
@@ -81,6 +120,15 @@ public class TestSortingAlgorithms {
     }
 
     @Test
+    public void bubbleSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.bubbleSort(array);
+        Assert.assertArrayEquals(expectedFloatArray, array);
+    }
+
+    @Test
     public void shakerSortTest() {
         Integer[] array = arrayToTest;
         SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
@@ -94,6 +142,15 @@ public class TestSortingAlgorithms {
     }
 
     @Test
+    public void shakerSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.shakerSort(array);
+        Assert.assertArrayEquals(expectedFloatArray, array);
+    }
+
+    @Test
     public void heapSortTest() {
         Integer[] array = arrayToTest;
         SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
@@ -104,6 +161,15 @@ public class TestSortingAlgorithms {
         array = anotherArrayToTest;
         sortingAlgorithm.heapSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
+    }
+
+    @Test
+    public void heapSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.heapSort(array);
+        Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
@@ -121,6 +187,16 @@ public class TestSortingAlgorithms {
     }
 
     @Test
+    public void shellSortFloatTest() {
+        Float[] array = floatArray;
+        int[] steps = new int[]{5, 3, 1};
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.shellSort(array, steps);
+        Assert.assertArrayEquals(expectedFloatArray, array);
+    }
+
+    @Test
     public void quickSortTest() {
         Integer[] array = arrayToTest;
         SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
@@ -134,6 +210,15 @@ public class TestSortingAlgorithms {
     }
 
     @Test
+    public void quickSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.quickSort(array, 0, array.length - 1);
+        Assert.assertArrayEquals(expectedFloatArray, array);
+    }
+
+    @Test
     public void mergeSortTest() {
         Integer[] array = arrayToTest;
         SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
@@ -144,6 +229,15 @@ public class TestSortingAlgorithms {
         array = anotherArrayToTest;
         sortingAlgorithm.mergeSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
+    }
+
+    @Test
+    public void mergeSortFloatTest() {
+        Float[] array = floatArray;
+        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+
+        sortingAlgorithm.mergeSort(array);
+        Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
