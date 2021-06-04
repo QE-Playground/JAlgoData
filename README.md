@@ -7,8 +7,8 @@ Test programs are written as junit test cases.
 In this repo I have
 
 Searching algorithms:
-- Linear search.
-- Binary search.
+- Generic Linear search.
+- Generic Binary search.
 
 Sorting algorithms:
 - Selection sort.
