@@ -4,147 +4,158 @@ import org.junit.Test;
 
 public class TestSortingAlgorithms {
 
-    private int[] arrayToTest;
-    private int[] anotherArrayToTest;
-    private static final int[] expectedArray        = new int[]{1, 2, 4, 5, 6, 8, 12, 15};
-    private static final int[] anotherExpectedArray = new int[]{6, 12, 18, 42, 44, 55, 67, 94};
+    private Integer[] arrayToTest;
+    private Integer[] anotherArrayToTest;
+    private static final Integer[] expectedArray        = new Integer[]{1, 2, 4, 5, 6, 8, 12, 15};
+    private static final Integer[] anotherExpectedArray = new Integer[]{6, 12, 18, 42, 44, 55, 67, 94};
 
     @Before
     public void setArrayToTest() {
-        arrayToTest        = new int[]{12, 2, 8, 5, 1, 6, 4, 15};
-        anotherArrayToTest = new int[]{44, 55, 12, 42, 94, 18, 6, 67};
+        arrayToTest        = new Integer[]{12, 2, 8, 5, 1, 6, 4, 15};
+        anotherArrayToTest = new Integer[]{44, 55, 12, 42, 94, 18, 6, 67};
     }
 
     @Test
     public void selectionSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.selectionSort(array);
+        sortingAlgorithm.selectionSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.selectionSort(array);
+        sortingAlgorithm.selectionSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void insertionSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.insertionSort(array);
+        sortingAlgorithm.insertionSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.insertionSort(array);
+        sortingAlgorithm.insertionSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void binaryInsertionSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.binaryInsertionSort(array);
+        sortingAlgorithm.binaryInsertionSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.binaryInsertionSort(array);
+        sortingAlgorithm.binaryInsertionSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void interchangeSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.interchangeSort(array);
+        sortingAlgorithm.interchangeSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.interchangeSort(array);
+        sortingAlgorithm.interchangeSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void bubbleSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.bubbleSort(array);
+        sortingAlgorithm.bubbleSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.bubbleSort(array);
+        sortingAlgorithm.bubbleSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void shakerSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.shakerSort(array);
+        sortingAlgorithm.shakerSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.shakerSort(array);
+        sortingAlgorithm.shakerSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void heapSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.heapSort(array);
+        sortingAlgorithm.heapSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.heapSort(array);
+        sortingAlgorithm.heapSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void shellSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
         int[] steps = new int[]{5, 3, 1};
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.shellSort(array, steps);
+        sortingAlgorithm.shellSort(array, steps);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.shellSort(array, steps);
+        sortingAlgorithm.shellSort(array, steps);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void quickSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.quickSort(array, 0, array.length - 1);
+        sortingAlgorithm.quickSort(array, 0, array.length - 1);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.quickSort(array, 0, array.length - 1);
+        sortingAlgorithm.quickSort(array, 0, array.length - 1);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void mergeSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.mergeSort(array);
+        sortingAlgorithm.mergeSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.mergeSort(array);
+        sortingAlgorithm.mergeSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void radixSortTest() {
-        int[] array = arrayToTest;
+        Integer[] array = arrayToTest;
+        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
 
-        SortingAlgorithms.radixSort(array);
+        sortingAlgorithm.radixSort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        SortingAlgorithms.radixSort(array);
+        sortingAlgorithm.radixSort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 }

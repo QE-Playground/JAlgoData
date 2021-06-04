@@ -1,9 +1,10 @@
 import java.util.Arrays;
 
-public class SortingAlgorithms {
-    public static void radixSort(int[] arr) {
+public class SortingAlgorithms<T extends Comparable<T>> {
+
+    public void radixSort(Integer[] arr) {
         int n = arr.length;
-        int m = getMax(arr);
+        Integer m = getMax(arr);
 
         // Do counting sort for every digit. Note that
         // instead of passing digit number, exp is passed.
@@ -12,12 +13,13 @@ public class SortingAlgorithms {
             countSort(arr, exp);
     }
 
-    public static void mergeSort(int[] a) {
+    public void mergeSort(T[] a) {
         int k = 1, n = a.length;
 
         do {
             int p = 0, pb = 0, pc = 0;
-            int[] b = new int[n], c = new int[n];
+            T[] b = (T[]) new Object();
+            T[] c = (T[]) new Object();
 
             while (p < n) {
                 for (int i = 0; (p < n) && (i < k); i++) b[pb++] = a[p++];
@@ -30,13 +32,13 @@ public class SortingAlgorithms {
         } while (k < n);
     }
 
-    public static void quickSort(int[] a, int l, int r) {
+    public void quickSort(T[] a, int l, int r) {
         int i = l, j = r;
-        int x = a[(l+r)/2];
+        T x = a[(l+r)/2];
 
         do {
-            while (a[i] < x) i++;
-            while (a[j] > x) j--;
+            while (a[i].compareTo(x) == -1) i++;
+            while (a[j].compareTo(x) ==  1) j--;
 
             if (i <= j) {
                 swap(i, j, a);
@@ -49,13 +51,13 @@ public class SortingAlgorithms {
         if (i < r) quickSort(a, i, r);
     }
 
-    public static void shellSort(int[] a, int[] steps) {
+    public void shellSort(T[] a, int[] steps) {
         for (int step : steps) {
             insertionSort(a, step);
         }
     }
 
-    public static void heapSort(int[] a) {
+    public void heapSort(T[] a) {
         int N = a.length, l = N/2, r = N-1;
 
         while (l >= 0) {
@@ -70,7 +72,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void shakerSort(int[] a) {
+    public void shakerSort(T[] a) {
         int N = a.length;
         int l = 0, r = N-1, k = N-1;
 
@@ -78,7 +80,7 @@ public class SortingAlgorithms {
             int j = r;
 
             while (j > l) {
-                if (a[j] < a[j-1]) {
+                if (a[j].compareTo(a[j-1]) == -1) {
                     swap(j , j-1, a);
                     k = j;
                 }
@@ -89,7 +91,7 @@ public class SortingAlgorithms {
             j = l;
 
             while (j < r) {
-                if (a[j] > a[j+1]) {
+                if (a[j].compareTo(a[j+1]) == 1) {
                     swap(j , j+1, a);
                     k = j;
                 }
@@ -100,32 +102,33 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void bubbleSort(int[] a) {
+    public void bubbleSort(T[] a) {
         int N = a.length;
 
         for (int i = 0; i < N; i++) {
             for (int j = N-1; j > i; j--) {
-                if (a[j] < a[j-1]) {
+                if (a[j].compareTo(a[j-1]) == -1) {
                     swap(j , j-1, a);
                 }
             }
         }
     }
 
-    public static void interchangeSort(int[] a) {
+    public void interchangeSort(T[] a) {
         int N = a.length;
 
         for (int i = 0; i < N-1; i++) {
             for (int j = i+1; j < N; j++) {
-                if (a[j] < a[i]) {
+                if (a[j].compareTo(a[i]) == -1) {
                     swap(i , j, a);
                 }
             }
         }
     }
 
-    public static void binaryInsertionSort(int[] a) {
-        int l, r, m, temp;
+    public void binaryInsertionSort(T[] a) {
+        int l, r, m;
+        T temp;
 
         for (int i = 1; i < a.length; i++) {
             temp = a[i];
@@ -135,7 +138,7 @@ public class SortingAlgorithms {
             while (l <= r) {
                 m = (l + r) / 2;
 
-                if (temp < a[m]) {
+                if (temp.compareTo(a[m]) == -1) {
                     r = m - 1;
                 } else {
                     l = m + 1;
@@ -151,15 +154,16 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void insertionSort(int[] a) {
-        int pos, temp;
+    public void insertionSort(T[] a) {
+        int pos;
+        T temp;
         int N = a.length;
 
         for (int i = 1; i < N; i++) {
             temp = a[i];
             pos = i-1;
 
-            while ((pos >= 0) && (a[pos] > temp)) {
+            while ((pos >= 0) && (a[pos].compareTo(temp) == 1)) {
                 a[pos+1] = a[pos];
                 pos--;
             }
@@ -168,7 +172,7 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void selectionSort(int[] arr) {
+    public void selectionSort(T[] arr) {
         int min;
         int N = arr.length;
 
@@ -176,7 +180,7 @@ public class SortingAlgorithms {
             min = i;
 
             for (int j = i+1; j < N; j++) {
-                if (arr[j] < arr[min]) {
+                if (arr[j].compareTo(arr[min]) == -1) {
                     min = j;
                 }
             }
@@ -189,15 +193,16 @@ public class SortingAlgorithms {
         System.out.println(Arrays.toString(array));
     }
 
-    private static void insertionSort(int[] a, int step) {
-        int pos, temp;
+    private void insertionSort(T[] a, int step) {
+        int pos;
+        T temp;
         int N = a.length;
 
         for (int i = step; i < N; i++) {
             temp = a[i];
             pos = i-step;
 
-            while ((pos >= 0) && (a[pos] > temp)) {
+            while ((pos >= 0) && (a[pos].compareTo(temp) == 1)) {
                 a[pos+step] = a[pos];
                 pos = pos - step;
             }
@@ -206,14 +211,14 @@ public class SortingAlgorithms {
         }
     }
 
-    private static void merge(int[] a, int[] b, int[] c, int nb, int nc, int k) {
+    private void merge(T[] a, T[] b, T[] c, int nb, int nc, int k) {
         int p = 0, pb = 0, pc = 0, ib = 0, ic = 0;
 
         while ((0 < nb) && (0 < nc)) {
             int kb = Math.min(k, nb);
             int kc = Math.min(k, nc);
 
-            if (b[pb+ib] <= c[pc+ic]) {
+            if (b[pb+ib].compareTo(c[pc+ic]) <= 0) {
                 a[p++] = b[pb+ib]; ib++;
                 if (ib == kb) {
                     for(; ic < kc; ic++) a[p++] = c[pc+ic];
@@ -233,15 +238,15 @@ public class SortingAlgorithms {
         }
     }
 
-    private static void siftUp(int[] a, int l, int r) {
+    private void siftUp(T[] a, int l, int r) {
         int i = l, j = 2 * i;
-        int x = a[i];
+        T x = a[i];
         int maxTry = 0;
 
         while (j <= r && maxTry < 10) {
             if (j < r) {
-                if (a[j] < a[j+1]) j++;
-                if (a[j] < x) {
+                if (a[j].compareTo(a[j+1]) == -1) j++;
+                if (a[j].compareTo(x) == -1) {
                     break;
                 } else {
                     a[i] = a[j];
@@ -256,17 +261,17 @@ public class SortingAlgorithms {
         }
     }
 
-    private static void swap(int i, int j, int[] arr) {
-        int t = arr[i];
+    private void swap(int i, int j, T[] arr) {
+        T t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;
     }
 
     // A function to do counting sort of arr[] according to
     // the digit represented by exp.
-    private static void countSort(int arr[], int exp) {
+    private void countSort(Integer arr[], int exp) {
         int n = arr.length;
-        int output[] = new int[n]; // output array
+        Integer output[] = new Integer[n]; // output array
         int i;
         int count[] = new int[10];
 
@@ -293,12 +298,12 @@ public class SortingAlgorithms {
             arr[i] = output[i];
     }
 
-    private static int getMax(int arr[]) {
+    private Integer getMax(Integer arr[]) {
         int n = arr.length;
-        int mx = arr[0];
+        Integer mx = arr[0];
 
         for (int i = 1; i < n; i++)
-            if (arr[i] > mx)
+            if (arr[i].compareTo(mx) > 0)
                 mx = arr[i];
 
         return mx;
