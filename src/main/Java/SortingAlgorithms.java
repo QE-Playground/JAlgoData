@@ -18,8 +18,8 @@ public class SortingAlgorithms<T extends Comparable<T>> {
 
         do {
             int p = 0, pb = 0, pc = 0;
-            T[] b = (T[]) new Object();
-            T[] c = (T[]) new Object();
+            T[] b = (T[]) new Comparable[n];
+            T[] c = (T[]) new Comparable[n];
 
             while (p < n) {
                 for (int i = 0; (p < n) && (i < k); i++) b[pb++] = a[p++];
