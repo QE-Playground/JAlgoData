@@ -36,6 +36,7 @@ In this repo I have
 
 **Data structures:**
 - Generic Singly Linked List.
+- Generic Doubly Linked List. 
 
 **References:** 
 
