@@ -7,7 +7,7 @@ All classes and methods would be implemented with generic programming mindset, f
 SinglyLinkedList<Integer> listInt;
 SinglyLinkedList<String>  listString;
 ```
-Looks pretty similar to List of java.util.list right? Infact my implementation is somewhat naive, thus help you understand the primer of Java Generics.
+Looks pretty similar to List of java.util.list right? In fact my implementation is somewhat naive, thus help you understand the primer of Java Generics.
 
 Test programs are written as junit test cases.
 
