@@ -41,6 +41,19 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return this;
     }
 
+    public SinglyLinkedList appendTail(T x) {
+        SinglyLinkedNode<T> newNode = new SinglyLinkedNode<T>(x);
+
+        if (this.head == null) {
+            this.head = newNode;
+            this.tail = this.head;
+        } else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+        return this;
+    }
+
     public SinglyLinkedList print() {
         System.out.println("[");
 

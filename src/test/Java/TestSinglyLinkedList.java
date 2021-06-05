@@ -30,4 +30,30 @@ public class TestSinglyLinkedList {
                 .appendHead(5.0f)
                 .print();
     }
+
+    @Test
+    public void testAppendTail() {
+        SinglyLinkedList<Integer> listInt   = new SinglyLinkedList<>();
+        SinglyLinkedList<String>  listString = new SinglyLinkedList<>();
+
+        System.out.println("A singly linked list with integer data");
+
+        listInt
+                .appendTail(1)
+                .appendTail(2)
+                .appendTail(3)
+                .appendTail(4)
+                .appendTail(5)
+                .print();
+
+        System.out.println("A singly linked list with String data");
+
+        listString
+                .appendTail("Vietnam")
+                .appendTail("France")
+                .appendTail("Switzerland")
+                .appendTail("Australia")
+                .appendTail("Ireland")
+                .print();
+    }
 }
