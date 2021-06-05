@@ -61,6 +61,27 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return this;
     }
 
+    public SinglyLinkedList remove(T k) {
+        SinglyLinkedNode<T> p = this.head;
+        SinglyLinkedNode<T> q = null;
+
+        while (p != null) {
+            if (p.getInfo().compareTo(k) == 0) break;
+            q = p;
+            p = p.getNext();
+        }
+
+        if (p == null) return this;
+        if (q != null) {
+            if (p == this.tail) this.tail = q;
+            q.setNext(p.getNext());
+        } else {
+            this.head = p.getNext();
+            if (this.head == null) this.tail = null;
+        }
+        return this;
+    }
+
     public SinglyLinkedList print() {
         System.out.println("[");
 
