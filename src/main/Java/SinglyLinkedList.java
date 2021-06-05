@@ -18,16 +18,6 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         this.tail = tail;
     }
 
-    public void appendHead( SinglyLinkedNode<T> newNode) {
-        if (this.head == null) {
-            this.head = newNode;
-            this.tail = this.head;
-        } else {
-            newNode.setNext(this.head);
-            this.head = newNode;
-        }
-    }
-
     public SinglyLinkedList appendHead(T x) {
         SinglyLinkedNode<T> newNode = new SinglyLinkedNode<T>(x);
 
@@ -54,6 +44,23 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return this;
     }
 
+    public SinglyLinkedList appendAfter(T key, T keyToAdd) {
+        SinglyLinkedNode<T> q = linearSearch(key);
+        SinglyLinkedNode<T> newNode = new SinglyLinkedNode<>(keyToAdd);
+
+        if (q != null) {
+            newNode.setNext(q.getNext());
+            q.setNext(newNode);
+
+            if (q == this.tail) {
+                this.tail = newNode;
+            }
+        } else {
+            appendHead(newNode);
+        }
+        return this;
+    }
+
     public SinglyLinkedList print() {
         System.out.println("[");
 
@@ -66,5 +73,24 @@ public class SinglyLinkedList<T extends Comparable<T>> {
 
         System.out.println("]");
         return this;
+    }
+
+    private SinglyLinkedNode<T> linearSearch(T k) {
+        SinglyLinkedNode<T> p = this.head;
+
+        while ((p != null) && (p.getInfo().compareTo(k) != 0)) {
+            p = p.getNext();
+        }
+        return p;
+    }
+
+    private void appendHead(SinglyLinkedNode<T> newNode) {
+        if (this.head == null) {
+            this.head = newNode;
+            this.tail = this.head;
+        } else {
+            newNode.setNext(this.head);
+            this.head = newNode;
+        }
     }
 }

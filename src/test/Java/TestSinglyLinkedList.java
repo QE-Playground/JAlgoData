@@ -56,4 +56,40 @@ public class TestSinglyLinkedList {
                 .appendTail("Ireland")
                 .print();
     }
+
+    @Test
+    public void testAppendAfter() {
+        SinglyLinkedList<Integer> listInt   = new SinglyLinkedList<>();
+        SinglyLinkedList<String>  listString = new SinglyLinkedList<>();
+
+        System.out.println("A singly linked list with integer data");
+
+        listInt
+                .appendTail(1)
+                .appendTail(2)
+                .appendTail(3)
+                .appendTail(4)
+                .appendTail(6)
+                .print();
+
+        System.out.println("Append '5' after '4' ...");
+
+        listInt.appendAfter(4,5)
+                .print();
+
+        System.out.println("A singly linked list with String data");
+
+        listString
+                .appendTail("Vietnam")
+                .appendTail("France")
+                .appendTail("Switzerland")
+                .appendTail("Australia")
+                .appendTail("Ireland")
+                .print();
+
+        System.out.println("Append 'Germany' after 'Switzerland' ...");
+
+        listString.appendAfter("Switzerland", "Germany")
+                .print();
+    }
 }
