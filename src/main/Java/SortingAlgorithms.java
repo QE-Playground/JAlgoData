@@ -37,8 +37,8 @@ public class SortingAlgorithms<T extends Comparable<T>> {
         T x = a[(l+r)/2];
 
         do {
-            while (a[i].compareTo(x) == -1) i++;
-            while (a[j].compareTo(x) ==  1) j--;
+            while (a[i].compareTo(x) < 0) i++;
+            while (a[j].compareTo(x) > 0) j--;
 
             if (i <= j) {
                 swap(i, j, a);
@@ -80,7 +80,7 @@ public class SortingAlgorithms<T extends Comparable<T>> {
             int j = r;
 
             while (j > l) {
-                if (a[j].compareTo(a[j-1]) == -1) {
+                if (a[j].compareTo(a[j-1]) < 0) {
                     swap(j , j-1, a);
                     k = j;
                 }
@@ -91,7 +91,7 @@ public class SortingAlgorithms<T extends Comparable<T>> {
             j = l;
 
             while (j < r) {
-                if (a[j].compareTo(a[j+1]) == 1) {
+                if (a[j].compareTo(a[j+1]) > 0) {
                     swap(j , j+1, a);
                     k = j;
                 }
@@ -107,7 +107,7 @@ public class SortingAlgorithms<T extends Comparable<T>> {
 
         for (int i = 0; i < N; i++) {
             for (int j = N-1; j > i; j--) {
-                if (a[j].compareTo(a[j-1]) == -1) {
+                if (a[j].compareTo(a[j-1]) < 0) {
                     swap(j , j-1, a);
                 }
             }
@@ -119,7 +119,7 @@ public class SortingAlgorithms<T extends Comparable<T>> {
 
         for (int i = 0; i < N-1; i++) {
             for (int j = i+1; j < N; j++) {
-                if (a[j].compareTo(a[i]) == -1) {
+                if (a[j].compareTo(a[i]) < 0) {
                     swap(i , j, a);
                 }
             }
@@ -138,7 +138,7 @@ public class SortingAlgorithms<T extends Comparable<T>> {
             while (l <= r) {
                 m = (l + r) / 2;
 
-                if (temp.compareTo(a[m]) == -1) {
+                if (temp.compareTo(a[m]) < 0) {
                     r = m - 1;
                 } else {
                     l = m + 1;
@@ -163,7 +163,7 @@ public class SortingAlgorithms<T extends Comparable<T>> {
             temp = a[i];
             pos = i-1;
 
-            while ((pos >= 0) && (a[pos].compareTo(temp) == 1)) {
+            while ((pos >= 0) && (a[pos].compareTo(temp) > 0)) {
                 a[pos+1] = a[pos];
                 pos--;
             }
@@ -180,7 +180,7 @@ public class SortingAlgorithms<T extends Comparable<T>> {
             min = i;
 
             for (int j = i+1; j < N; j++) {
-                if (arr[j].compareTo(arr[min]) == -1) {
+                if (arr[j].compareTo(arr[min]) < 0) {
                     min = j;
                 }
             }
@@ -202,7 +202,7 @@ public class SortingAlgorithms<T extends Comparable<T>> {
             temp = a[i];
             pos = i-step;
 
-            while ((pos >= 0) && (a[pos].compareTo(temp) == 1)) {
+            while ((pos >= 0) && (a[pos].compareTo(temp) > 0)) {
                 a[pos+step] = a[pos];
                 pos = pos - step;
             }
@@ -245,8 +245,8 @@ public class SortingAlgorithms<T extends Comparable<T>> {
 
         while (j <= r && maxTry < 10) {
             if (j < r) {
-                if (a[j].compareTo(a[j+1]) == -1) j++;
-                if (a[j].compareTo(x) == -1) {
+                if (a[j].compareTo(a[j+1]) < 0) j++;
+                if (a[j].compareTo(x) < 0) {
                     break;
                 } else {
                     a[i] = a[j];
