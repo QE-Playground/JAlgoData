@@ -96,6 +96,25 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return this;
     }
 
+    public SinglyLinkedList selectionSort() {
+        SinglyLinkedNode<T> p = this.head;
+
+        while (p != this.tail) {
+            SinglyLinkedNode<T> q = p.getNext();
+            SinglyLinkedNode<T> min = p;
+
+            while (q != null) {
+                if (q.getInfo().compareTo(min.getInfo()) < 0)
+                    min = q;
+                q = q.getNext();
+            }
+
+            swapInfo(min, p);
+            p = p.getNext();
+        }
+        return this;
+    }
+
     private SinglyLinkedNode<T> linearSearch(T k) {
         SinglyLinkedNode<T> p = this.head;
 
@@ -113,5 +132,13 @@ public class SinglyLinkedList<T extends Comparable<T>> {
             newNode.setNext(this.head);
             this.head = newNode;
         }
+    }
+
+    private void swapInfo(SinglyLinkedNode<T> p, SinglyLinkedNode<T> q) {
+        SinglyLinkedNode<T> t = new SinglyLinkedNode<>();
+
+        t.setInfo(p.getInfo());
+        p.setInfo(q.getInfo());
+        q.setInfo(t.getInfo());
     }
 }

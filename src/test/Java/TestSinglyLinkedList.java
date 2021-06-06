@@ -130,4 +130,42 @@ public class TestSinglyLinkedList {
         listString.remove("Germany")
                 .print();
     }
+
+    @Test
+    public void testSelectionSort() {
+        SinglyLinkedList<Integer> listInt   = new SinglyLinkedList<>();
+        SinglyLinkedList<String>  listString = new SinglyLinkedList<>();
+
+        System.out.println("A singly linked list with integer data");
+
+        listInt
+                .appendTail(10)
+                .appendTail(9)
+                .appendTail(20)
+                .appendTail(8)
+                .appendTail(1)
+                .appendTail(5)
+                .print();
+
+        System.out.println("Selection sort on the data field ...");
+
+        listInt.selectionSort()
+                .print();
+
+        System.out.println("A singly linked list with String data");
+
+        listString
+                .appendTail("Vietnam")
+                .appendTail("France")
+                .appendTail("Switzerland")
+                .appendTail("Australia")
+                .appendTail("Germany")
+                .appendTail("Ireland")
+                .print();
+
+        System.out.println("Selection sort on the data field ...");
+
+        listString.selectionSort()
+                .print();
+    }
 }
