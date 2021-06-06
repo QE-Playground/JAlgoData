@@ -204,4 +204,42 @@ public class TestDoublyLinkedList {
         listString.selectionSort()
                 .print();
     }
+
+    @Test
+    public void testInsertionSort() {
+        DoublyLinkedList<Integer> listInt   = new DoublyLinkedList<>();
+        DoublyLinkedList<String>  listString = new DoublyLinkedList<>();
+
+        System.out.println("A doubly linked list with integer data");
+
+        listInt
+                .appendTail(10)
+                .appendTail(9)
+                .appendTail(20)
+                .appendTail(8)
+                .appendTail(1)
+                .appendTail(5)
+                .print();
+
+        System.out.println("Insertion sort on the data field ...");
+
+        listInt.insertionSort()
+                .print();
+
+        System.out.println("A doubly linked list with String data");
+
+        listString
+                .appendTail("Vietnam")
+                .appendTail("France")
+                .appendTail("Switzerland")
+                .appendTail("Australia")
+                .appendTail("Germany")
+                .appendTail("Ireland")
+                .print();
+
+        System.out.println("Insertion sort on the data field ...");
+
+        listString.insertionSort()
+                .print();
+    }
 }

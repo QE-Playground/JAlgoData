@@ -155,6 +155,30 @@ public class DoublyLinkedList<T extends Comparable<T>> extends SinglyLinkedList<
         return this;
     }
 
+    public DoublyLinkedList<T> insertionSort() {
+        DoublyLinkedNode<T> p = this.head.getNext();
+
+        while (p != null) {
+            T x = p.getInfo();
+            DoublyLinkedNode<T> q = p.getPrev();
+
+            while (q != null && q.getInfo().compareTo(x) > 0) {
+                q.getNext().setInfo(q.getInfo());
+                q = q.getPrev();
+            }
+
+            if (q != null && q.getNext() != null) {
+                q.getNext().setInfo(x);
+            }
+
+            if (q == null) {
+                this.head.setInfo(x);
+            }
+            p = p.getNext();
+        }
+        return this;
+    }
+
     private DoublyLinkedNode<T> linearSearch(T k) {
         DoublyLinkedNode<T> p = this.head;
 
