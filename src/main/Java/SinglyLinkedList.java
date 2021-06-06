@@ -83,16 +83,19 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     }
 
     public SinglyLinkedList print() {
-        System.out.println("[");
+        System.out.print("[");
 
         SinglyLinkedNode node = this.head;
 
         while (node != null) {
-            System.out.println(String.format("%s ,", node.getInfo()));
+            if (node.getNext() != null)
+                System.out.print(String.format("%s, ", node.getInfo()));
+            else
+                System.out.print(String.format("%s", node.getInfo()));
             node = node.getNext();
         }
 
-        System.out.println("]");
+        System.out.print("]\n");
         return this;
     }
 

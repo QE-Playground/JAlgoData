@@ -125,7 +125,7 @@ public class TestDoublyLinkedList {
 
         System.out.println("Append 'Germany' before 'Switzerland' ...");
 
-        listString.appendAfter("Switzerland", "Germany")
+        listString.appendBefore("Switzerland", "Germany")
                 .print();
     }
 
