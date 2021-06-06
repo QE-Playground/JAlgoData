@@ -96,7 +96,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return this;
     }
 
-    public SinglyLinkedList selectionSort() {
+    public SinglyLinkedList<T> selectionSort() {
         SinglyLinkedNode<T> p = this.head;
 
         while (p != this.tail) {
@@ -134,7 +134,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    private void swapInfo(SinglyLinkedNode<T> p, SinglyLinkedNode<T> q) {
+    protected void swapInfo(SinglyLinkedNode<T> p, SinglyLinkedNode<T> q) {
         SinglyLinkedNode<T> t = new SinglyLinkedNode<>();
 
         t.setInfo(p.getInfo());
