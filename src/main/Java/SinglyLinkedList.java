@@ -82,6 +82,20 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return this;
     }
 
+    public T removeHead() {
+        T x = this.getHead().getInfo();
+
+        if (this.getHead() == null)
+            return null;
+
+        this.setHead(this.getHead().getNext());
+
+        if (this.getHead() == null)
+            this.setTail(null);
+
+        return x;
+    }
+
     public SinglyLinkedList print() {
         System.out.print("[");
 
