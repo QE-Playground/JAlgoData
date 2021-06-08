@@ -38,6 +38,7 @@ In this repo I have
 - Generic Singly Linked List.
 - Generic Doubly Linked List. 
 - Generic Binary tree.
+- Generic Stack.
 
 **References:** 
 
