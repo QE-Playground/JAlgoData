@@ -10,8 +10,7 @@ public class Stack<T extends Comparable<T>> {
     }
 
     public Stack() {
-        stack.setHead(null);
-        stack.setTail(null);
+        setStack(new SinglyLinkedList<>());
     }
 
     public boolean isEmpty() {
@@ -31,5 +30,10 @@ public class Stack<T extends Comparable<T>> {
 
     public T top() {
         return stack.getHead().getInfo();
+    }
+
+    public Stack<T> print() {
+        stack.print();
+        return this;
     }
 }
