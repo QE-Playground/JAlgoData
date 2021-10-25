@@ -1,3 +1,5 @@
+package org.obiwan.datastruct;
+
 public class BTreeNode<T extends Comparable<T>> {
     private T key;
     private BTreeNode<T> parent;

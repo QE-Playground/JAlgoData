@@ -1,3 +1,5 @@
+package org.obiwan.algorithm;
+
 import java.util.Arrays;
 
 public class SortingAlgorithms<T extends Comparable<T>> {

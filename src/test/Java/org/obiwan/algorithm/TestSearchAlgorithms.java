@@ -1,3 +1,5 @@
+package org.obiwan.algorithm;
+
 import org.junit.Assert;
 import org.junit.Test;
 
