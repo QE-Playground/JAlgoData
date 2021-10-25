@@ -1,3 +1,5 @@
+package org.obiwan.datastruct;
+
 public class Stack<T extends Comparable<T>> {
     private SinglyLinkedList<T> stack;
 

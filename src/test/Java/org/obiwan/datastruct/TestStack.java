@@ -1,3 +1,5 @@
+package org.obiwan.datastruct;
+
 import org.junit.Assert;
 import org.junit.Test;
 

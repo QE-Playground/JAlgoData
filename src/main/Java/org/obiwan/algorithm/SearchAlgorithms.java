@@ -1,3 +1,5 @@
+package org.obiwan.algorithm;
+
 public class SearchAlgorithms<T extends Comparable<T>> {
 
     public int linearSearch(T[] arr, T elementToSearch) {

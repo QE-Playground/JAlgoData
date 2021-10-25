@@ -1,3 +1,5 @@
+package org.obiwan.datastruct;
+
 public class DoublyLinkedNode<T extends Comparable<T>> extends SinglyLinkedNode<T> {
     private T info;
     private DoublyLinkedNode<T> next;

@@ -1,3 +1,5 @@
+package org.obiwan.datastruct;
+
 public class BinaryTree<T extends Comparable<T>> {
     private BTreeNode<T> tree;
 
