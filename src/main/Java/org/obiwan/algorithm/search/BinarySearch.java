@@ -1,18 +1,12 @@
-package org.obiwan.algorithm;
+package org.obiwan.algorithm.search;
 
-public class SearchAlgorithms<T extends Comparable<T>> {
+public class BinarySearch<T extends Comparable<T>> extends BaseSearch<T> implements ISearch<T> {
+    public BinarySearch() {
 
-    public int linearSearch(T[] arr, T elementToSearch) {
-
-        for (int index = 0; index < arr.length; index++) {
-            if (arr[index].equals(elementToSearch))
-                return index;
-        }
-        return -1;
     }
 
-    public int binarySearch(T[] arr, T elementToSearch) {
-
+    @Override
+    public int search(Comparable[] arr, Comparable elementToSearch) {
         int firstIndex = 0;
         int lastIndex = arr.length - 1;
 
@@ -38,12 +32,8 @@ public class SearchAlgorithms<T extends Comparable<T>> {
         return -1;
     }
 
+    @Override
     public void print(T elementToSearch, int index) {
-        if (index == -1){
-            System.out.println(elementToSearch + " not found.");
-        }
-        else {
-            System.out.println(elementToSearch + " found at index: " + index);
-        }
+        super.print(elementToSearch, index);
     }
 }
