@@ -3,6 +3,9 @@ package org.obiwan.algorithm;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.obiwan.algorithm.sort.ISort;
+import org.obiwan.algorithm.sort.MergeSort;
+import org.obiwan.algorithm.sort.QuickSort;
 
 import java.util.Arrays;
 
@@ -279,62 +282,62 @@ public class TestSortingAlgorithms {
     @Test
     public void quickSortTest() {
         Integer[] array = arrayToTest;
-        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Integer> sortingAlgorithm = new QuickSort<>();
 
-        sortingAlgorithm.quickSort(array, 0, array.length - 1);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        sortingAlgorithm.quickSort(array, 0, array.length - 1);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void quickSortFloatTest() {
         Float[] array = floatArray;
-        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Float> sortingAlgorithm = new QuickSort<>();
 
-        sortingAlgorithm.quickSort(array, 0, array.length - 1);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
     public void quickSortStringTest() {
         String[] array = countries;
-        SortingAlgorithms<String> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<String> sortingAlgorithm = new QuickSort<>();
 
-        sortingAlgorithm.quickSort(array, 0, array.length - 1);
+        sortingAlgorithm.sort(array);
         Assert.assertEquals(Arrays.toString(sortedCountries), Arrays.toString(array));
     }
 
     @Test
     public void mergeSortTest() {
         Integer[] array = arrayToTest;
-        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Integer> sortingAlgorithm = new MergeSort<>();
 
-        sortingAlgorithm.mergeSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        sortingAlgorithm.mergeSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void mergeSortFloatTest() {
         Float[] array = floatArray;
-        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Float> sortingAlgorithm = new MergeSort<>();
 
-        sortingAlgorithm.mergeSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
     public void mergeSortStringTest() {
         String[] array = countries;
-        SortingAlgorithms<String> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<String> sortingAlgorithm = new MergeSort<>();
 
-        sortingAlgorithm.mergeSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertEquals(Arrays.toString(sortedCountries), Arrays.toString(array));
     }
 
