@@ -3,10 +3,7 @@ package org.obiwan.algorithm;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.obiwan.algorithm.sort.HeapSort;
-import org.obiwan.algorithm.sort.ISort;
-import org.obiwan.algorithm.sort.MergeSort;
-import org.obiwan.algorithm.sort.QuickSort;
+import org.obiwan.algorithm.sort.*;
 
 import java.util.Arrays;
 
@@ -32,31 +29,31 @@ public class TestSortingAlgorithms {
     @Test
     public void selectionSortTest() {
         Integer[] array = arrayToTest;
-        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Integer> sortingAlgorithm = new SelectionSort<>();
 
-        sortingAlgorithm.selectionSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        sortingAlgorithm.selectionSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void selectionSortFloatTest() {
         Float[] array = floatArray;
-        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Float> sortingAlgorithm = new SelectionSort<>();
 
-        sortingAlgorithm.selectionSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
     public void selectionSortStringTest() {
         String[] array = countries;
-        SortingAlgorithms<String> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<String> sortingAlgorithm = new SelectionSort<>();
 
-        sortingAlgorithm.selectionSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertEquals(Arrays.toString(sortedCountries), Arrays.toString(array));
     }
 
