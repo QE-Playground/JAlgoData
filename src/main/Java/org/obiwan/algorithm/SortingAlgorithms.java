@@ -65,18 +65,6 @@ public class SortingAlgorithms<T extends Comparable<T>> {
         }
     }
 
-    public void interchangeSort(T[] a) {
-        int N = a.length;
-
-        for (int i = 0; i < N-1; i++) {
-            for (int j = i+1; j < N; j++) {
-                if (a[j].compareTo(a[i]) < 0) {
-                    swap(i , j, a);
-                }
-            }
-        }
-    }
-
     public static void print(int[] array) {
         System.out.println(Arrays.toString(array));
     }

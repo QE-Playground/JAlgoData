@@ -122,31 +122,31 @@ public class TestSortingAlgorithms {
     @Test
     public void interchangeSortTest() {
         Integer[] array = arrayToTest;
-        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Integer> sortingAlgorithm = new InterchangeSort<>();
 
-        sortingAlgorithm.interchangeSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        sortingAlgorithm.interchangeSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void interchangeSortFloatTest() {
         Float[] array = floatArray;
-        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Float> sortingAlgorithm = new InterchangeSort<>();
 
-        sortingAlgorithm.interchangeSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
     public void interchangeSortStringTest() {
         String[] array = countries;
-        SortingAlgorithms<String> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<String> sortingAlgorithm = new InterchangeSort<>();
 
-        sortingAlgorithm.interchangeSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertEquals(Arrays.toString(sortedCountries), Arrays.toString(array));
     }
 
