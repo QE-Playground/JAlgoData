@@ -60,31 +60,31 @@ public class TestSortingAlgorithms {
     @Test
     public void insertionSortTest() {
         Integer[] array = arrayToTest;
-        SortingAlgorithms<Integer> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Integer> sortingAlgorithm = new InsertionSort<>();
 
-        sortingAlgorithm.insertionSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedArray, array);
 
         array = anotherArrayToTest;
-        sortingAlgorithm.insertionSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(anotherExpectedArray, anotherArrayToTest);
     }
 
     @Test
     public void insertionSortFloatTest() {
         Float[] array = floatArray;
-        SortingAlgorithms<Float> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<Float> sortingAlgorithm = new InsertionSort<>();
 
-        sortingAlgorithm.insertionSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertArrayEquals(expectedFloatArray, array);
     }
 
     @Test
     public void insertionSortStringTest() {
         String[] array = countries;
-        SortingAlgorithms<String> sortingAlgorithm = new SortingAlgorithms<>();
+        ISort<String> sortingAlgorithm = new InsertionSort<>();
 
-        sortingAlgorithm.insertionSort(array);
+        sortingAlgorithm.sort(array);
         Assert.assertEquals(Arrays.toString(sortedCountries), Arrays.toString(array));
     }
 
