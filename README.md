@@ -47,3 +47,8 @@ In this repo I have
 [2] N.Wirth - Algorithms + Data structures = Programs (Prentice Hall, 1976).
 
 [3] [Generic Types](https://docs.oracle.com/javase/tutorial/java/generics/types.html), Oracle Java Documentation.
+
+### Donations:
+If you think that any information you obtained here is worth of some money and are willing to pay for it, feel free to send any amount through paypal.
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/TruongDang85)
