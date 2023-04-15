@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
+
+
